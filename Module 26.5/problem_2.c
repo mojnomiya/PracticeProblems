@@ -1,6 +1,6 @@
 #include <stdio.h>
 void sort(int *arr, int n);
-void swap(int *a, int *b);
+
 int main() {
     int n,i;
     scanf("%d", &n);
@@ -29,20 +29,10 @@ void sort(int *arr, int n)
         for(int j=i+1; j<n; j++)
         {
             if(arr[i]>arr[j]){
-                int *a = &arr[i], *b = &arr[j];
-                swap(a,b);
-                // temp = arr[i];
-                // arr[i] = arr[j];
-                // arr[j] = temp;
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
         }
     }
-}
-void swap(int *a, int *b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = *a;
-    // printf("Valu at a %d", *a);
-    // printf("Valu at b %d", *b);
 }
